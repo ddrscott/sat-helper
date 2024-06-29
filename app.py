@@ -1,5 +1,6 @@
 import re
 from openai import OpenAI
+import sys
 
 questions = None
 
@@ -63,4 +64,6 @@ def generate_all_responses(incorrect_answers:str="2a,3c,4c,6a,7c,8b,10a,11b,13d,
     
 
 if __name__ == '__main__':
-    generate_all_responses()
+    # read incorrect answers from command line arguments
+    incorrect_answers = sys.argv[1]
+    generate_all_responses(incorrect_answers)
